@@ -13,6 +13,7 @@ This program implements features for:
 * Reading data by passing key value
 
 ## How To Use
+* Transfer Goerli funds to your wallet using this [link](https://goerlifaucet.com/) 
 * Create Infura account and get Goerli link
 * Get private key from your wallet
 * Run following commands in your project terminal: <br/>
@@ -26,11 +27,14 @@ This program implements features for:
 ```python
 from API.API import Web3DatabaseAPI
 
-infura_url = "https://goerli.infura.io/v3/404781d45d67498e91fbf60644a7cbbb"
-private_key = "0x67ef89d575d630955faa22deabf035e756eaf6445221566090f7acc7ceb8f261"
+infura_url = "https://goerli.infura.io/v3/YOUR-API-KEY"
+private_key = "<Private key with 0x prefix>"
 
 obj = Web3DatabaseAPI(infura_url, private_key)
 
 obj.set(123,"message")
 msg = obj.get(123)
+print(msg)
+obj.set(333, "poruka2")
+msg = obj.get(333)
 print(msg)
