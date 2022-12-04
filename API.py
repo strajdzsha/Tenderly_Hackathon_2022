@@ -7,10 +7,6 @@ import os
 import hashlib
 
 class Web3DatabaseAPI:
-    infura_url = "https://goerli.infura.io/v3/404781d45d67498e91fbf60644a7cbbb"
-    contract_address = "0x1f88700c1448E57b6cC66aBc0332b92B3FaD08a0"
-    private_key = "0x67ef89d575d630955faa22deabf035e756eaf6445221566090f7acc7ceb8f261"
-    contract = None
 
     def ini(self, reset):
         if reset and exists("./contract_address.txt"):
@@ -150,3 +146,19 @@ class Web3DatabaseAPI:
         ]["object"]
 
         return bytecode
+
+
+if __name__ == "__main__":
+
+    # Usage example
+
+    infura_url = "https://goerli.infura.io/v3/404781d45d67498e91fbf60644a7cbbb"
+    contract_address = "0x1f88700c1448E57b6cC66aBc0332b92B3FaD08a0"
+    private_key = "0x67ef89d575d630955faa22deabf035e756eaf6445221566090f7acc7ceb8f261"
+
+
+    obj = Web3DatabaseAPI()
+
+    obj.set(123,"message")
+    msg = obj.get(123)
+    print(msg)
