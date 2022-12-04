@@ -24,7 +24,7 @@ This program implements features for:
 
 ## Example
 ```python
-from API import Web3DatabaseAPI
+from API.API import Web3DatabaseAPI
 
 infura_url = "https://goerli.infura.io/v3/404781d45d67498e91fbf60644a7cbbb"
 private_key = "0x67ef89d575d630955faa22deabf035e756eaf6445221566090f7acc7ceb8f261"
