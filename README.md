@@ -17,7 +17,7 @@ todo..
 
 ## Example
 ```python
-from Web3DatabaseAPI import Web3DatabaseAPI
+from API import Web3DatabaseAPI
 
 obj = Web3DatabaseAPI()
 
