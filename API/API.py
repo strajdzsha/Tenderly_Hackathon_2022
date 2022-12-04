@@ -12,7 +12,7 @@ class Web3DatabaseAPI:
         if reset and exists("./contract_address.txt"):
             os.remove("./contract_address.txt")
 
-        self.web3 = Web3(Web3.HTTPProvider(self.infura_url))
+        self.web3 = Web3(Web3.HTTPProvider(self.node_url))
         self.chain_id = 5
 
         compiled_sol = self.sol_2_json()
@@ -28,11 +28,11 @@ class Web3DatabaseAPI:
                 f.write(self.contract_address)
         else:
             with open("./contract_address.txt", 'r') as f:
-                self.contract_adress = f.read()
+                self.contract_address = f.read()
                 self.update_contract()
 
-    def __init__(self,infura_url,private_key,reset=False):
-        self.infura_url = infura_url
+    def __init__(self,node_url,private_key,reset=False):
+        self.node_url = node_url
         self.contract_address = ""
         self.private_key = private_key
         self.ini(reset)
@@ -138,17 +138,3 @@ class Web3DatabaseAPI:
         ]["object"]
 
         return bytecode
-
-
-if __name__ == "__main__":
-
-    # Usage example
-
-    infura_url = "https://goerli.infura.io/v3/404781d45d67498e91fbf60644a7cbbb"
-    private_key = "0x67ef89d575d630955faa22deabf035e756eaf6445221566090f7acc7ceb8f261"
-
-    obj = Web3DatabaseAPI(infura_url, private_key)
-
-    obj.set(123,"message")
-    msg = obj.get(123)
-    print(msg)
