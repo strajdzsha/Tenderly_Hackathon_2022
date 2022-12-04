@@ -15,6 +15,8 @@ This program implements features for:
 ## How To Use
 * Create Infura account and get Goerli link
 * Get private key from your wallet
+* Run following commands in your project terminal:
+```asdasd
 * Import class Web3DatabaseAPI
 * Create object of type Web3DatabaseAPI and pass Goerli link and private key as constructor parameters
 
