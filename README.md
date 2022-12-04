@@ -15,7 +15,7 @@ This program implements features for:
 ## How To Use
 * Create Infura account and get Goerli link
 * Get private key from your wallet
-* Run following commands in your project terminal:
+* Run following commands in your project terminal: <br/>
 `git clone https://github.com/strajdzsha/Tenderly_Hackathon_2022  
 cd Tenderly_Hackathon_2022  
 pip install -e .  `
