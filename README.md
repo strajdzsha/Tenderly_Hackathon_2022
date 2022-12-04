@@ -16,7 +16,9 @@ This program implements features for:
 * Create Infura account and get Goerli link
 * Get private key from your wallet
 * Run following commands in your project terminal:
-```asdasd
+`git clone https://github.com/strajdzsha/Tenderly_Hackathon_2022  
+cd Tenderly_Hackathon_2022  
+pip install -e .  `
 * Import class Web3DatabaseAPI
 * Create object of type Web3DatabaseAPI and pass Goerli link and private key as constructor parameters
 
@@ -32,4 +34,3 @@ obj = Web3DatabaseAPI(infura_url, private_key)
 obj.set(123,"message")
 msg = obj.get(123)
 print(msg)
-```
