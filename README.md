@@ -13,10 +13,10 @@ This program implements features for:
 * Reading data by passing key value
 
 ## How To Use
-* Create Infura account and get Görli link
+* Create Infura account and get Goerli link
 * Get private key from your wallet
 * Import class Web3DatabaseAPI
-* Create object of type Web3DatabaseAPI and pass Görli link and private key as constructor parameters
+* Create object of type Web3DatabaseAPI and pass Goerli link and private key as constructor parameters
 
 ## Example
 ```python
