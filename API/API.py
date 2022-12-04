@@ -19,10 +19,6 @@ class Web3DatabaseAPI:
         self.abi = self.get_abi(compiled_sol)
         self.bytecode = self.get_bytecode(compiled_sol)
 
-        self.contract = self.web3.eth.contract(address=self.contract_address, abi = self.abi)
-
-        self.contract_instance = self.web3.eth.contract(abi=self.abi, address=self.contract_address)
-
         acct = self.web3.eth.account.privateKeyToAccount(self.private_key)
         self.account_address = acct.address
 
@@ -35,14 +31,10 @@ class Web3DatabaseAPI:
                 self.contract_adress = f.read()
                 self.update_contract()
 
-
-    def __init__(self,infura_url,contract_address,private_key,reset=False):
+    def __init__(self,infura_url,private_key,reset=False):
         self.infura_url = infura_url
-        self.contract_address = contract_address
+        self.contract_address = ""
         self.private_key = private_key
-        self.ini(reset)
-
-    def __init__(self, reset=False):
         self.ini(reset)
     
     def deploy(self):
@@ -153,11 +145,9 @@ if __name__ == "__main__":
     # Usage example
 
     infura_url = "https://goerli.infura.io/v3/404781d45d67498e91fbf60644a7cbbb"
-    contract_address = "0x1f88700c1448E57b6cC66aBc0332b92B3FaD08a0"
     private_key = "0x67ef89d575d630955faa22deabf035e756eaf6445221566090f7acc7ceb8f261"
 
-
-    obj = Web3DatabaseAPI()
+    obj = Web3DatabaseAPI(infura_url, private_key)
 
     obj.set(123,"message")
     msg = obj.get(123)
